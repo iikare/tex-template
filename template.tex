@@ -1,0 +1,186 @@
+\documentclass[english]{article}
+\usepackage[margin=1in,letterpaper]{geometry}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage[latin1]{inputenc}
+\usepackage[linguistics]{forest}
+\usepackage[T1]{fontenc}
+\usepackage{
+  amsmath, amssymb, amsthm, listings,
+  subcaption, float, booktabs, csquotes,
+  enumitem, tikz, pgf, pgfplots, cancel,
+  ulem, fancyhdr, framed, venndiagram,
+  xcolor, xfrac, qtree, commath, tabularx,
+  changepage, minted, bm
+}
+
+%chktex-file 1
+%chktex-file 3
+%chktex-file 8
+%chktex-file 11
+%chktex-file 12
+%chktex-file 13
+%chktex-file 16
+%chktex-file 18
+%chktex-file 26
+%chktex-file 29
+%chktex-file 36
+%chktex-file 39
+%chktex-file 44
+
+\usepackage[english]{babel}
+\usetikzlibrary{arrows, automata, tikzmark}
+\usemintedstyle{tango}
+
+%\renewcommand{\qedsymbol}{}
+%\renewcommand\qedhere{\blacksquare}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+
+\theoremstyle{definition}
+\newtheorem*{claim}{Claim}
+\newtheorem{defn}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{
+  % frame=tb,
+  aboveskip=3mm,
+  language=R,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=2
+}
+
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+
+\newcommand{\qedb}{$\blacksquare$}
+\newcommand{\blank}{\textvisiblespace}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\SD}{\mathrm{SD}}
+\newcommand{\Binom}{\mathrm{Binom}}
+\newcommand{\NegBinom}{\mathrm{NegBinom}}
+\newcommand{\Geom}{\mathrm{Geom}}
+\newcommand{\Pois}{\mathrm{Pois}}
+\newcommand{\Unif}{\mathrm{Unif}}
+\newcommand{\Norm}{\mathrm{N}}
+\newcommand{\Exp}{\mathrm{Exp}}
+
+\DeclareMathOperator{\POLY}{P}
+\DeclareMathOperator{\NPOLY}{NP}
+\DeclareMathOperator{\NPOLYC}{NP--Complete}
+\DeclareMathOperator{\CONPOLY}{co--NP}
+
+\providecommand{\floor}[1]{\left \lfloor #1 \right \rfloor }
+\providecommand{\ceil}[1]{\left \lceil #1 \right \rceil }
+
+
+\DeclareRobustCommand{\uvec}[1]{{%
+  \ifcsname uvec#1\endcsname
+     \csname uvec#1\endcsname
+   \else
+    \bm{\hat{\mathbf{#1}}}%
+   \fi
+}}
+\newcommand{\uni}{{\bm{\hat{\textnormal{\bfseries\i}}}}}
+\newcommand{\unj}{{\bm{\hat{\textnormal{\bfseries\j}}}}}
+
+\def\unk{\uvec{k}}
+
+\newcommand{\figc}[2]{
+  \begin{figure}[H]\begin{center}
+    #1
+    \cap{}tion{#2}
+  \end{center}\end{figure}
+}
+
+\makeatletter
+\newenvironment{restoretext}%
+    {\@parboxrestore%
+     \begin{adjustwidth}{}{\leftmargin}%
+    }{\end{adjustwidth}
+     }
+\makeatother
+
+\newenvironment{subproof}[1][\proofname]{%
+  \renewcommand{\qedsymbol}{$\blacksquare$}%
+  \begin{proof}[#1]%
+}{%
+  \end{proof}%
+}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+\def\rcbegin{\begin{restoretext}\centering}
+\def\rcend{\end{restoretext}}
+
+\renewcommand{\qedsymbol}{\qedsq}
+
+\newcommand{\qedsq}{\hfill \ensuremath{\Box}}
+
+\newcommand{\course}{course (W22, prof)}
+\newcommand{\assignment}{assignment}
+\newcommand{\name}{Rahul Dharmaji}
+\newcommand{\nowdate}{\small 1 January 2022}
+
+\pagestyle{fancy}
+\rhead{\name}
+\chead{\assignment}
+\lhead{\course}
+\cfoot{\thepage}
+
+\begin{document}
+
+
+\title{
+  \vspace{-1em}
+  {\small \course} \\
+  {\bfseries{\assignment}}\\
+
+  \vspace{0.35em}
+
+  \small \name\\
+
+  \vspace{-4.0em}
+
+  \date{\nowdate}
+
+}
+
+\maketitle
+
+
+\begin{enumerate}[wide, label={\arabic*.}, labelwidth=!, labelindent=0pt]
+  
+  \vspace{-2.6em}
+
+  \item a
+\end{enumerate}
+
+\end{document}
