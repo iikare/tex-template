@@ -5,23 +5,16 @@
 \usepackage[linguistics]{forest}
 \usepackage[T1]{fontenc}
 \usepackage{
-  amsmath, amssymb, amsthm, 
-  booktabs, bm,
-  cancel, changepage, commath, csquotes,
-  datetime,
-  enumitem,
-  fancyhdr, framed, float,
-  listings,
-  minted,
-  pgf, pgfplots,
-  qtree,
-  subcaption,
-  tabularx, tikz,
-  ulem,
-  venndiagram,
-  xcolor, xfrac
+  amsmath, amssymb, amsthm, listings,
+  caption, float, booktabs, csquotes,
+  enumitem, tikz, pgf, pgfplots, cancel,
+  ulem, fancyhdr, framed, venndiagram,
+  xcolor, xfrac, qtree, commath, tabularx,
+  changepage, minted, bm, cases, hyperref, bookmark
 }
-
+\hypersetup{
+    colorlinks = true,
+}
 %chktex-file 1
 %chktex-file 3
 %chktex-file 8
@@ -39,7 +32,7 @@
 \usepackage[english]{babel}
 \usetikzlibrary{arrows, automata, tikzmark}
 \usemintedstyle{tango}
-\pgfplotsset{compat=1.18}
+
 %\renewcommand{\qedsymbol}{}
 %\renewcommand\qedhere{\blacksquare}
 
@@ -132,19 +125,19 @@
      }
 \makeatother
 
-\newenvironment{subproof}[1][\proofname]{%
-  \renewcommand{\qedsymbol}{$\blacksquare$}%
-  \begin{proof}[#1]%
-}{%
-  \end{proof}%
-}
-
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
   \hskip -\arraycolsep
   \let\@ifnextchar\new@ifnextchar
   \array{#1}}
 \makeatother
+
+\newcommand{\rcg}[4][]{
+  \rcbegin
+    \includegraphics[width=#2\textwidth]{#3}
+    \captionof{figure}{#4}
+  \rcend
+}
 
 \def\rcbegin{\begin{restoretext}\centering}
 \def\rcend{\end{restoretext}}
@@ -153,18 +146,16 @@
 
 \newcommand{\qedsq}{\hfill \ensuremath{\Box}}
 
-\newcommand{\course}{course (W22, prof)}
-\newcommand{\assignment}{assignment}
-\newcommand{\name}{a b}                          % your name goes here!
-\newcommand{\nowdate}{\small 1 January 2022}
+\newcommand{\course}{a}
+\newcommand{\assignment}{b}
+\newcommand{\name}{c}
+\newcommand{\nowdate}{d}
 
-\newdateformat{nd}{\the\day ~\monthname[\the\month]  \the\year}
 \pagestyle{fancy}
 \rhead{\name}
 \chead{\assignment}
 \lhead{\course}
 \cfoot{\thepage}
-\author{}
 
 \begin{document}
 
@@ -176,23 +167,22 @@
 
   \vspace{0.35em}
 
-  \small \name
-  \vspace{0.4em}
-
+  \small \name\\
 
   \vspace{-4.0em}
 
-  \date{\nd\today}
+  \date{\nowdate}
 
 }
-
 \maketitle
 
-\begin{enumerate}[wide, label={\arabic*.}, labelwidth=!, labelindent=0pt]
+
+\begin{enumerate}[wide, label=\textbf{\arabic*.}, labelwidth=!, labelindent=0pt]
   
   \vspace{-2.6em}
 
-  \item a
+  \item 
+  
 \end{enumerate}
 
 \end{document}
