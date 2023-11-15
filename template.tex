@@ -35,14 +35,10 @@
 \usemintedstyle{tango}
 \setuptodonotes{inline}
 
-%\renewcommand{\qedsymbol}{}
-%\renewcommand\qedhere{\blacksquare}
-
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem*{theorem*}{Theorem}
 \newtheorem{lemma}{Lemma}
-
 
 \theoremstyle{definition}
 \newtheorem*{claim}{Claim}
@@ -77,7 +73,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
-
+\renewcommand{\O}{\mathcal{O}}
 
 \newcommand{\qedb}{$\blacksquare$}
 \newcommand{\blank}{\textvisiblespace}
@@ -98,7 +94,6 @@
 
 \providecommand{\floor}[1]{\left \lfloor #1 \right \rfloor }
 \providecommand{\ceil}[1]{\left \lceil #1 \right \rceil }
-
 
 \DeclareRobustCommand{\uvec}[1]{{%
   \ifcsname uvec#1\endcsname
@@ -145,7 +140,6 @@
 \def\rcend{\end{restoretext}}
 
 \renewcommand{\qedsymbol}{\qedsq}
-
 \newcommand{\qedsq}{\hfill \ensuremath{\Box}}
 
 \newcommand{\course}{a}
@@ -164,7 +158,6 @@
 
 \begin{document}
 
-
 \title{
   \vspace{-1em}
   {\small \course} \\
@@ -180,7 +173,6 @@
 
 }
 \maketitle
-
 
 \begin{enumerate}[wide, label=\textbf{\arabic*.}, labelwidth=!, labelindent=0pt]
   
