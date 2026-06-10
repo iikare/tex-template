@@ -33,9 +33,25 @@
 %chktex-file 44
 
 \usepackage[english]{babel}
+
+\AddToHook{begindocument}{%
+  \def\today{\number\day\space\ifcase\month\or
+    January\or February\or March\or April\or May\or June\or
+    July\or August\or September\or October\or November\or December\fi
+    \space\number\year}%
+}
+
 \usetikzlibrary{arrows, automata, tikzmark}
 \usemintedstyle{tango}
 \setuptodonotes{inline}
+
+\makeatletter
+\def\today{\number\day\space\ifcase\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December\fi
+  \space\number\year}
+\makeatother
+  
 
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -152,34 +168,37 @@
 \renewcommand{\qedsymbol}{\qedsq}
 \newcommand{\qedsq}{\hfill \ensuremath{\Box}}
 
-\newcommand{\course}{a}
-\newcommand{\assignment}{b}
-\newcommand{\name}{c}
-\newcommand{\nowdate}{d}
+\newcommand{\name}{name}
+\newcommand{\doctitle}{title}
+\newcommand{\docsubtitle}{subtitle}
+\newcommand{\nowdate}{\today}
+
+\author{}
 
 \pagestyle{fancy}
 \rhead{\name}
-\chead{\assignment}
-\lhead{\course}
+\chead{\doctitle}
+\lhead{\docsubtitle}
 \cfoot{\thepage}
 
 \providecommand{\mi}[1]{\mintinline{C}{#1}}
 \providecommand{\mip}[1]{\mintinline{python}{#1}}
 
+
 \begin{document}
 
 \title{
   \vspace{-1em}
-  {\small \course} \\
-  {\bfseries{\assignment}}\\
+  {\small \docsubtitle} \\
+  {\bfseries{\doctitle}}\\
 
   \vspace{0.35em}
 
   \small \name\\
 
-  \vspace{-4.0em}
+  \vspace{-3.75em}
 
-  \date{\nowdate}
+  \date{\today}
 
 }
 \maketitle
@@ -188,8 +207,9 @@
   
   \vspace{-2.6em}
 
-  \item 
+  \item a
   
 \end{enumerate}
 
 \end{document}
+
